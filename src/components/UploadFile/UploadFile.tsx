@@ -10,7 +10,7 @@ interface UploadFileProps {
 
 export const UploadFile: FunctionComponent<UploadFileProps> = ({ uploadedFile, setUploadedFile, types }) => {
   return (
-    <FileUploader handleChange={(file: File) => setUploadedFile(file)} name="file" types={types}>
+    <FileUploader handleChange={setUploadedFile} name="file" types={types}>
       <div className="shadow-md p-6 h-56 rounded-md flex flex-col justify-between items-center cursor-pointer">
         {uploadedFile ? (
           <div className="h-full flex flex-col justify-between py-10">
