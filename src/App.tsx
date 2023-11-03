@@ -13,8 +13,6 @@ function App() {
     const data = await uploadedFile?.text();
     const transformedData: DataResult[] = parse(data || "", { header: true, dynamicTyping: true }).data as DataResult[];
 
-    // console.log(transformedData);
-
     const dataByProjects: DataByProjects[] = transformedData.reduce((acc: DataByProjects[], value: DataResult) => {
       const { ProjectID, ...rest } = value;
       if (!acc.some((emp) => emp.ProjectID === value.ProjectID)) {
